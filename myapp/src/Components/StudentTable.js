@@ -12,6 +12,18 @@ export default function StudentTable(props) {
               <td>Country</td>
             </tr>
           </thead>
+          <tbody>
+            {
+                props.students.map(student=>
+                    <tr>
+                        <td>{student.firstName}</td>
+                        <td>{student.lastName}</td>
+                        <td>{student.course}</td>
+                        <td>{student.address.country}</td>
+                    </tr>
+                )
+            }
+          </tbody>
         </table>
       </div>
     </div>
