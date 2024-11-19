@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1>Students Information Portal</h1>
-      <table>
+      <table width='100%'>
         <tbody>
           <tr>
             <td>
