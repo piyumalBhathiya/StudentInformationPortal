@@ -4,7 +4,19 @@ import Students from './Components/Students';
 
 function App() {
   return (
-    <Students/>
+    <div className="App">
+      <h1>Students Information Portal</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
   );
 }
 
