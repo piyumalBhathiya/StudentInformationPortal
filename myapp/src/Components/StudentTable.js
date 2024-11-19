@@ -1,8 +1,9 @@
 import "../Assets/css/compo.css";
-import {useState} from 'react'
+import { useState } from "react";
+import Profile from "./Profile";
 
 export default function StudentTable(props) {
-    const [stu,setStu]  = useState(props.students[0]);
+  const [stu, setStu] = useState(props.students[0]);
 
   return (
     <div className="outerDiv">
@@ -18,19 +19,27 @@ export default function StudentTable(props) {
             </tr>
           </thead>
           <tbody>
-            {
-                props.students.map(student=>
-                    <tr>
-                        <td>{student.firstName}</td>
-                        <td>{student.lastName}</td>
-                        <td>{student.course}</td>
-                        <td>{student.address.country}</td>
-                        <td><button onClick={()=>setStu(student)}>View</button></td>
-                    </tr>
-                )
-            }
+            {props.students.map((student) => (
+              <tr>
+                <td>{student.firstName}</td>
+                <td>{student.lastName}</td>
+                <td>{student.course}</td>
+                <td>{student.address.country}</td>
+                <td>
+                  <button
+                    id={student.studentId}
+                    onClick={() => setStu(student)}
+                  >
+                    View
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
+      </div>
+      <div className="rightDiv">
+        <Profile stu={stu} />
       </div>
     </div>
   );
